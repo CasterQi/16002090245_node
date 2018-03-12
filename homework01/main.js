@@ -16,8 +16,10 @@ asyncFun("interesting",function(result){
 
 var fs = require('fs')
 var path = require('path')
-var extName = '.js'
-fs.readdir('/vue-devtools-master',function(err,files){
+//var extName = '.js'
+var extName = process.argv[3];
+var pathname = process.argv[2];
+fs.readdir(pathname,function(err,files){
     if (err) {
         return console.error(err);
     }
